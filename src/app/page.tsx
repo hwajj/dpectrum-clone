@@ -1,101 +1,82 @@
-import Image from "next/image";
+import MainIntroduction from "@/app/component/MainIntroduction";
+import MainProjectContact from "@/app/component/MainProjectContact";
+import MainText from "@/app/component/MainText";
+import TabComponent from "@/app/component/TabComponent";
+import { Fragment } from "react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <main className="flex flex-col w-full">
+        <MainIntroduction>
+          <MainText
+            title={"디펙트럼이\n내부 개발팀이\n되어드리겠습니다"}
+            description={
+              "프리랜서 없는 100% 자체 개발팀으로 빠르고 정확한 커뮤니케이션이 가능합니다.\n시니어급 전문가들이 직접 프로젝트에 참여해 높은 완성도의 결과물을 제공합니다."
+            }
+          />
+        </MainIntroduction>
+        {/*menu*/}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        <TabComponent />
+        <MainProjectContact>
+          <MainText
+            title={
+              <span className={"  "}>
+                <div className="text-center flex items-center justify-center gap-2 flex-col w-[283px] md:w-[512px] lg:w-full lg:flex-row lg:flex-nowrap ">
+                  <span className="flex gap-2">
+                    당신의 상상을{" "}
+                    <div className="lg:hidden md:inline-block">
+                      <StrikethroughLine length={10} />
+                    </div>
+                    {/*<span className="w-1/2 md:hidden border-b md:h-[10px] border-black inline-block "></span>*/}
+                  </span>
+                  {/*<span className="lg:w-[280px] hidden border-b lg:h-[34px] border-black lg:inline-block "></span>*/}
+                  <div className="lg:inline hidden">
+                    <StrikethroughLine length={20} />
+                  </div>
+                  <span className="flex gap-2">
+                    <div className="lg:hidden md:inline-block">
+                      <StrikethroughLine length={8} />
+                    </div>{" "}
+                    커다란 파장으로
+                  </span>
+                </div>
+              </span>
+            }
+            description={
+              "세상을 바꿀 당신의 비즈니스를 위해 \n" +
+              "디펙트럼은 새로운 시각과 혁신을 제공합니다."
+            }
+          />
+        </MainProjectContact>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="h-[148px] lg:text-[15px] md:text-[14px] text-[12px] gap-4 bg-black w-full font-suit text-white flex flex-col justify-center items-center">
+        <li className="flex gap-4 lg:gap-6 flex-wrap justify-center">
+          <ul className="pr-6 border-r border-gray-300 h-[12px] inline-flex items-center">
+            02. 6956. 6411
+          </ul>
+          <ul className="pr-6 border-r border-gray-300 h-[12px] inline-flex items-center">
+            04029, 서울특별시 마포구 성지길 55
+          </ul>
+          <ul className="pr-6 inline-flex items-center h-[12px]">
+            info@dpectrum.app
+          </ul>
+        </li>
+        <p>© Copyright by Dpectrum. All rights reserved.</p>
       </footer>
-    </div>
+    </>
+  );
+}
+function StrikethroughLine({ length }: { length: number }) {
+  const spaces = Array.from({ length }).map((_, index) => (
+    <Fragment key={index}>&nbsp;</Fragment>
+  ));
+
+  return (
+    <span className="inline-block">
+      <s className="block border-black">{spaces}</s>
+    </span>
   );
 }
