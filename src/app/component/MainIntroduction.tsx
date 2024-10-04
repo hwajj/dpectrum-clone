@@ -1,7 +1,11 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react'
+import Image from 'next/image'
 
-const MainIntroduction = ({ children }) => {
+export default function MainIntroduction({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <div className="w-full h-[812px] md:h-[768px] lg:h-[810px] relative">
       <Image
@@ -16,7 +20,7 @@ const MainIntroduction = ({ children }) => {
         className="absolute bottom-0 left-0 lg:block hidden"
         width={321}
         height={321}
-        alt={"left bottom bluegreen image"}
+        alt={'left bottom bluegreen image'}
       />
       <div className="absolute right-0 bottom-0 lg:w-[1057px] md:w-[768px] w-[509px] h-auto">
         <Image
@@ -35,9 +39,9 @@ const MainIntroduction = ({ children }) => {
         alt="right_bottom_blue image"
       />
 
-      {children}
+      <div className="absolute gap-[30px] flex flex-col w-full h-full text-center justify-center items-center">
+        {children}
+      </div>
     </div>
-  );
-};
-
-export default MainIntroduction;
+  )
+}

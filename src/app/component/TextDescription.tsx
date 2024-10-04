@@ -1,18 +1,16 @@
-import React from "react";
-
-interface TitleDescriptionProps {
-  title: string;
-  boldPart: string;
-  description: string;
-  lineBreaks?: number;
-}
+import React from 'react'
 
 export default function TitleDescription({
   title,
   boldPart,
   description,
-}: TitleDescriptionProps) {
-  const [beforeBold] = title.split(boldPart);
+}: {
+  title: string
+  boldPart: string
+  description: string
+  lineBreaks?: number
+}) {
+  const [beforeBold] = title.split(boldPart)
   return (
     <div className="px-5 text-center pb-20  leading-10 md:leading-[52px] lg:leading-[64px]">
       <h1 className="text-[34px] md:text-[44px] lg:text-[54px] font-light flex-row flex  justify-center flex-wrap ">
@@ -24,5 +22,5 @@ export default function TitleDescription({
         {description}
       </p>
     </div>
-  );
+  )
 }
